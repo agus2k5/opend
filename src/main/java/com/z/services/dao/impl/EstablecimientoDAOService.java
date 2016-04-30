@@ -17,6 +17,9 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author Mariano
  */
+/*  Spring’s @Service Stereotype annotation, a type of @Component 
+    and thus will automatically be detected by the Spring container as part of the container’s 
+    component scanning process*/
 @Service
 public class EstablecimientoDAOService implements EstablecimientoDAO{
     @Autowired
