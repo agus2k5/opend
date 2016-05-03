@@ -8,7 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="typography" value="thin"/>
 <!DOCTYPE html>
-<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+<!--<div class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red">
       <i class="material-icons">menu</i>
     </a>
@@ -16,7 +16,7 @@
       <li><a class="btn-floating blue darken-1" id="btn_list"><i class="material-icons">insert_chart</i></a></li>
       <li><a class="btn-floating green darken-1" id="btn_insert"><i class="material-icons">attach_file</i></a></li>
     </ul>
-  </div>
+  </div>-->
 </main>
 </body>
 <footer class="page-footer indigo">

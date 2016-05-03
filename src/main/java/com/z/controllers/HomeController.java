@@ -48,6 +48,7 @@ public class HomeController {
             dist=Double.parseDouble(distanciaKM);
             if(dist<=0){dist=1.0;}
         }catch(NumberFormatException e){System.out.println(e.toString());}
+        System.out.println("lat: "+lat+", lng: "+lng);
         Criteria criteria = new CriteriaDistance(Float.parseFloat(lat), Float.parseFloat(lng), dist);
         return criteria.meetCriteria(establecimientoDAO.list());
     }

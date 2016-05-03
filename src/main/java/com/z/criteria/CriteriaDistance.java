@@ -24,6 +24,18 @@ public class CriteriaDistance implements Criteria {
         this.my_lat = my_lat;
         this.my_lon = my_lon;
     }
+    private double getDistance2(Establecimiento establecimiento){
+        double latitud_radianes = my_lat * Math.PI / 180;
+        double to_latitud_radianes = establecimiento.getLatitud() * Math.PI / 180;
+        double delta_longitud = (my_lon - establecimiento.getLongitud()) * Math.PI / 180;
+        return (Math.acos(
+                Math.sin(latitud_radianes)
+                * Math.sin(to_latitud_radianes)
+                + Math.cos(latitud_radianes)
+                * Math.cos(to_latitud_radianes)
+                * Math.cos(delta_longitud)
+        ) * 180 / Math.PI)*100;
+    }
     private double getDistanceTo(Establecimiento establecimiento) {
         double latitud_radianes = my_lat * Math.PI / 180;
         double to_latitud_radianes = establecimiento.getLatitud() * Math.PI / 180;
@@ -41,7 +53,7 @@ public class CriteriaDistance implements Criteria {
     public List<Establecimiento> meetCriteria(List<Establecimiento> establecimientos) {
         List<Establecimiento> inRange = new ArrayList<Establecimiento>();
         for (Establecimiento establecimiento : establecimientos) {
-            double dist = getDistanceTo(establecimiento);
+            double dist = getDistance2(establecimiento);
             System.out.println(establecimiento.getNombre() + "\tDist: " + dist);
             if (dist <= this.distanceKM) {
                 inRange.add(establecimiento);
