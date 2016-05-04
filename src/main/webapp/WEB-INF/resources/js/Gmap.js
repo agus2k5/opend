@@ -1,9 +1,17 @@
 var pos = {lat: -27.477900, lng: -58.819607};//centro de corrientes
 var lugar = new google.maps.LatLng(pos.lat, pos.lng);
-var map,marker,circle;
+var map, marker, circle;
 var markers = [];
 function initialize() {
-    var mapProp = {center: lugar, zoom: 15, mapTypeId: google.maps.MapTypeId.ROADMAP};//propiedades
+    var mapProp = {
+        center: lugar,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.TOP_RIGHT
+        }
+    };//propiedades
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);//mapa
 }
 function addLocation(location) {

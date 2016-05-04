@@ -25,9 +25,9 @@ public class CriteriaDistance implements Criteria {
         this.my_lon = my_lon;
     }
     private double getDistance2(Establecimiento establecimiento){
-        double latitud_radianes = my_lat * Math.PI / 180;
-        double to_latitud_radianes = establecimiento.getLatitud() * Math.PI / 180;
-        double delta_longitud = (my_lon - establecimiento.getLongitud()) * Math.PI / 180;
+        double latitud_radianes = Math.toRadians(my_lat);
+        double to_latitud_radianes = Math.toRadians(establecimiento.getLatitud());
+        double delta_longitud = Math.toRadians(my_lon - establecimiento.getLongitud());
         return (Math.acos(
                 Math.sin(latitud_radianes)
                 * Math.sin(to_latitud_radianes)
