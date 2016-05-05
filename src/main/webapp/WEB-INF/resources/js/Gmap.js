@@ -13,6 +13,11 @@ function initialize() {
         }
     };//propiedades
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);//mapa
+    google.maps.event.addDomListener(window, "resize", function() {
+   var center = map.getCenter();
+   google.maps.event.trigger(map, "resize");
+   map.setCenter(center); 
+});
 }
 function addLocation(location) {
     var pinIcon = new google.maps.MarkerImage(img_url + 'Person.png', null, null, null, new google.maps.Size(60, 60));
