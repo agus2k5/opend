@@ -39,7 +39,7 @@
         </div>-->
         <div class="col s12">
             <div class="table-responsive" style="overflow:auto; overflow-y:hidden; margin: 0 auto; withe-space: nowrap">
-                <div id="googleMap" class="col s12"style="width:100%;height:100%;margin-top: 10px;margin-bottom: 10px;margin-left: 15px;margin-right: 25px; position: absolute"></div>
+                <div id="googleMap" class="col s12"style="width:100%;height:550px;margin-top: 10px;margin-bottom: 10px;margin-left: 15px;margin-right: 25px;"></div>
             </div>  
         </div>
     </div>
